@@ -7,6 +7,7 @@ int bmp_w;
 int bmp_h;
 char bmp_ASCII[500][500];
 int i = 0, j = 0;
+//Grey scale values provided in tutorial
 double max_grayScale = (0.3*(255.0) + 0.59*(255.0) + 0.11*(255.0));
 
 //Function intialization
@@ -22,7 +23,7 @@ int main(){
 	fin.open(bmp);
 	unsigned char* bmp_info;
 	
-  bmp_info = new unsigned char[54];
+ 	bmp_info = new unsigned char[54];
 	fin.read((char*)bmp_info, 54);
 	bmp_w = *(int*)&bmp_info[18];
 	bmp_h = *(int*)&bmp_info[22];
@@ -30,7 +31,7 @@ int main(){
 	int rgbLength = bmp_w * 3;
 	unsigned char* pixelInfo = new unsigned char[rgbLength];
 	char temp;
-  double avg = 0;
+  	double avg = 0;
 
 	while (i < bmp_h)
 	{
@@ -39,7 +40,7 @@ int main(){
 		for (j = 0; j < bmp_w * 3; j += 3)
 		{
 			double grayScale = (0.3*((int)pixelInfo[j]) + 0.59*((int)pixelInfo[j + 1]) + 0.11*((int)pixelInfo[j + 2]));
-      bmp_ASCII[i][j] = grayScale;
+     			bmp_ASCII[i][j] = grayScale;
 			setArray(grayScale);
 		}
 		i++;
