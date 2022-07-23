@@ -5,7 +5,7 @@ using namespace std;
 //Variable declaration
 int bmp_w;
 int bmp_h;
-char bmp_ASCII[500][500];
+char bmp_ASCII[500][500]; //fixed array size
 int i = 0, j = 0;
 //Grey scale values provided in tutorial
 double max_grayScale = (0.3*(255.0) + 0.59*(255.0) + 0.11*(255.0));
